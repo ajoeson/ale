@@ -180,4 +180,6 @@ JournalEntry.prototype.saveTransactions = function(id, opts) {
     });
 };
 
+JournalEntry.sync({ force: false });
+
 module.exports = JournalEntry;

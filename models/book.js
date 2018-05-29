@@ -26,7 +26,7 @@ const Op = Sequelize.Op;
  * A Book contains many journal entries
  */
 const Book = sequelize.define('book', {
-    name: {type: Sequelize.TEXT, unique: true},
+    name: {type: Sequelize.STRING(100), unique: true},
     quoteCurrency: {type: Sequelize.STRING, defaultValue: 'USD'}
 });
 
@@ -317,5 +317,7 @@ Book.prototype.values = function() {
         updatedAt: this.get('updatedAt').valueOf()
     };
 };
+
+Book.sync({ force: false });
 
 module.exports = Book;

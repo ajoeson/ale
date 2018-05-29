@@ -47,5 +47,7 @@ Transaction.prototype.values = function() {
     };
 };
 
+Transaction.sync({ force: false });
+
 // Foreign key relationships are setup in journal.js
 module.exports = Transaction;
